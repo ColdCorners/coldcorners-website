@@ -1,15 +1,18 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
 import cloudflare from "@astrojs/cloudflare";
+import { helpLinks, legalLinks, siteUrl } from "./src/site.mjs";
 
-// https://astro.build/config
+const indexedPaths = new Set(["/", ...[...helpLinks, ...legalLinks].map(({ href }) => href)]);
+
 export default defineConfig({
-	site: "https://example.com",
-	integrations: [mdx(), sitemap()],
+	site: siteUrl,
+	trailingSlash: "always",
+	build: { inlineStylesheets: "always" },
+	integrations: [sitemap({ filter: (url) => indexedPaths.has(new URL(url).pathname) })],
 	adapter: cloudflare({
+		imageService: "compile",
 		platformProxy: {
 			enabled: true,
 		},

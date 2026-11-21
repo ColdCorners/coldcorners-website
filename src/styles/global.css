@@ -1,155 +1,159 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-bold.woff") format("woff");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-body {
-	font-family: "Atkinson", sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --background: #0c121b;
+  --surface: #202732;
+  --border: #3b434e;
+  --line: #3a424c;
+  --text: #f6f7fa;
+  --body: #d4dae2;
+  --muted: #b2bcc9;
+  --accent: #ffc397;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --inset: clamp(1.25rem, 4vw, 2rem);
+  scrollbar-gutter: stable;
+  color: var(--text);
+  background: var(--background);
 }
 
+@supports not (scrollbar-gutter: stable) {
+  html { overflow-y: scroll; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: max(1.15rem, env(safe-area-inset-top)) max(var(--gutter), env(safe-area-inset-right))
+    max(1.5rem, env(safe-area-inset-bottom)) max(var(--gutter), env(safe-area-inset-left));
+  background: linear-gradient(165deg, #101824 0%, var(--background) 56%, #12151b 100%);
+  line-height: 1.55;
+}
+
+.site-frame { width: 100%; max-width: 75rem; margin-inline: auto; }
+
+a { color: var(--accent); text-underline-offset: 0.19em; }
+a:hover { color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 0.2rem; }
+img { display: block; max-width: 100%; }
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; }
+h1 { letter-spacing: -0.035em; }
+p, li, figcaption { color: var(--body); }
+ul, ol { padding-inline-start: 1.4rem; }
+li + li { margin-top: 0.35rem; }
+strong { color: var(--text); font-weight: 650; }
+
+.document-card {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: var(--surface);
+  box-shadow: 0 0.75rem 2.25rem rgb(0 0 0 / 28%);
+  overflow-wrap: break-word;
+}
+
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 1rem;
+}
+
+.page-links a, .document-footer > a {
+  padding-block: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.page-links a:hover, .document-footer > a:hover, .page-links a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+}
+
+.masthead, .document-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text);
+  font-weight: 680;
+  font-size: 1.125rem;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+}
+.document-card { margin-block: 1rem; padding: var(--inset); }
+.document-title { border-bottom: 1px solid var(--line); padding-bottom: 1.15rem; }
+.document-title h1 { font-size: clamp(1.9rem, 5vw, 2.4rem); }
+.document-title > p { margin-top: 0.55rem; max-width: 65ch; }
+.document-title .updated { color: var(--muted); font-size: 0.875rem; }
+.document-card > section, .document-card > p { margin-top: min(1.5rem, var(--inset)); }
+.document-card h2 { font-size: 1.25rem; letter-spacing: -0.015em; }
+.document-card section > :where(p, ul, ol) { margin-top: 0.55rem; }
+
+details { border-bottom: 1px solid var(--line); }
+details:first-of-type { margin-top: 0.45rem; }
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.85rem;
+  color: var(--text);
+  font-weight: 550;
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "";
+  flex: 0 0 0.5rem;
+  height: 0.5rem;
+  margin-inline: 0.25rem;
+  border: solid var(--accent);
+  border-width: 0 1.5px 1.5px 0;
+  transform: translateY(-0.12rem) rotate(45deg);
+}
+details[open] > summary::after { transform: translateY(0.14rem) rotate(225deg); }
+summary:hover { color: var(--accent); }
+details > :where(p, ol, ul, figure) { margin-bottom: 0.8rem; }
+details > p + figure { margin-top: 0.5rem; }
+figure img { width: 100%; height: auto; }
+figcaption { margin-top: 0.4rem; font-size: 0.9375rem; color: var(--muted); }
+
+.skip-link {
+  position: absolute;
+  inset: 0.5rem auto auto 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--surface);
+  transform: translateY(-180%);
+}
+.skip-link:focus { transform: none; }
 .sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 28rem) {
+  .document-page { --inset: 1.05rem; }
+  .document-title { padding-bottom: 1rem; }
+}
+@media (max-width: 26rem) {
+  :root { --gutter: 1rem; }
 }

@@ -1,0 +1,38 @@
+---
+import Document from '../layouts/Document.astro';
+import { supportEmail } from '../site.mjs';
+---
+
+<Document title="Privacy Policy" description="How the ColdCorners Mac app, this website, and developer support handle your information." updated="2026-11-21">
+  <section>
+    <h2>What stays on your Mac</h2>
+    <p>ColdCorners works locally without an account. It saves your display identifiers and combinations, corner selections, blocking mode, timer deadline, and interface preferences on your Mac. This lets it recognize your desk setup when you reconnect a display.</p>
+    <p>If you set a keyboard shortcut, the recorder reads your key combination while it has focus in Settings. It saves only the chosen key and modifiers on your Mac. Afterward, macOS notifies ColdCorners when you press that shortcut.</p>
+    <p>The app has no advertising or analytics SDKs. It does not send your display setup, settings, or input activity to the developer.</p>
+  </section>
+  <section>
+    <h2>Why the app asks for permission</h2>
+    <p>ColdCorners uses the macOS permission called Device Control and Data Access on macOS 27 and later, or Accessibility on earlier versions. While blocking is active, it checks mouse movement and dragging so it can suppress movement within the 3 by 3 point area at a blocked, exposed corner.</p>
+    <p>Pointer positions are used in memory and discarded. ColdCorners does not log what you type or click, read other apps' contents, or capture your screen. You can turn off blocking in the app or revoke access in your Mac's privacy settings.</p>
+  </section>
+  <section>
+    <h2>Links opened by the app</h2>
+    <p>Choosing a help, developer, or More Apps link opens a website in your browser. Some links identify ColdCorners as the source of the visit. They contain no device identifier or saved corner settings.</p>
+  </section>
+  <section>
+    <h2>Website analytics and hosting</h2>
+    <p>This website uses Plausible, served from analytics.cornerlock.app, to count page visits and outbound link activity. The reports include page paths, referrers, campaign labels, browser and device types, and approximate locations.</p>
+    <p>Plausible uses the IP address and browser information to count visits for the day. It does not store raw IP addresses, set analytics cookies, or create persistent visitor identifiers. The developer sees aggregate statistics. <a href="https://plausible.io/data-policy">Plausible's data policy</a>.</p>
+    <p>Cloudflare receives standard request information, including the IP address and browser information, to deliver and protect the website. <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's privacy policy</a>.</p>
+  </section>
+  <section id="support">
+    <h2>Support and privacy requests</h2>
+    <p>If you email support, Ighor July receives your email address, message, and any attachments you send. These are used to answer the request, investigate problems, and keep relevant correspondence. Messages are retained as needed for those purposes and applicable obligations. Support information is not sold or used for advertising.</p>
+    <p>GitHub issues are public. Your profile and posts may be visible to others. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+    <p>For private questions or to request deletion of support correspondence, email <a href={`mailto:${supportEmail}`}>{supportEmail}</a>. Any legally required records may be retained.</p>
+  </section>
+  <section>
+    <h2>App Store purchases and policy updates</h2>
+    <p>Apple handles App Store transactions. ColdCorners receives no payment card details. External sites have their own privacy policies. Changes to this policy will appear here with an updated date.</p>
+  </section>
+</Document>

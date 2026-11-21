@@ -1,0 +1,169 @@
+.home {
+  --section-space: clamp(2rem, 5vw, 4rem);
+  --fine-line: #313b45;
+  --hero-accent: #ffb47d;
+  background: radial-gradient(ellipse at 83% 4%, #192a34 0, transparent 32rem),
+    linear-gradient(158deg, #101821, #0d151d 52%, #141a20);
+}
+.home-header, .home-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.2rem;
+  flex-wrap: wrap;
+}
+.home-header {
+  border-bottom: 1px solid var(--fine-line);
+  padding-bottom: 1rem;
+}
+.home-header .brand { font-size: 1.2rem; }
+.home-header .page-links, .home-footer .page-links { gap: 0.25rem clamp(0.8rem, 2vw, 1.5rem); }
+.home-header .page-links a { color: var(--body); }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  align-items: center;
+  gap: min(4vw, var(--gutter));
+  padding-block: var(--section-space);
+}
+.hero-copy h1 {
+  max-width: 12ch;
+  font-size: clamp(3.2rem, 5.5vw, 5rem);
+  letter-spacing: -0.055em;
+  line-height: 1.01;
+}
+.hero-copy h1 span { color: var(--hero-accent); white-space: nowrap; }
+.hero-copy > p {
+  max-width: 39ch;
+  margin-top: 1.1rem;
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+  line-height: 1.55;
+  color: #c4cfd8;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.2rem;
+  margin-top: 1.45rem;
+}
+.primary-link, .text-link { font-weight: 600; }
+.primary-link {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.05rem;
+  border-radius: 0.65rem;
+  border: 1px solid #ffc296;
+  background: var(--hero-accent);
+  color: #201911;
+  text-decoration: none;
+}
+.primary-link:hover { color: #201911; background: #ffc79e; }
+.text-link { text-decoration-thickness: 1px; }
+.hero-copy .availability { margin-top: 0.75rem; font-size: 0.9375rem; color: var(--muted); }
+.hero-image, .gallery-image { display: block; }
+.hero-image {
+  overflow: hidden;
+  border: 1px solid #34434c;
+  border-radius: clamp(0.8rem, 2vw, 1.5rem);
+  box-shadow: 0 1rem 3rem #050b1059;
+}
+.hero-image img, .gallery-image img { width: 100%; height: auto; }
+.hero-image:hover, .gallery-image:hover { border-color: #aa8970; }
+
+.product-section, .menu-status {
+  border-top: 1px solid var(--fine-line);
+  padding-block: var(--section-space);
+  scroll-margin-top: 1.25rem;
+}
+.product-section h2 {
+  font-size: clamp(2rem, 3.5vw, 3.05rem);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+.gallery { min-inline-size: 0; margin: min(1.7rem, var(--gutter)) 0 0; padding: 0; border: 0; }
+.gallery-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.47fr) minmax(0, 1.3fr);
+  grid-template-rows: repeat(3, min-content) 1fr;
+  align-items: start;
+  gap: 0.65rem min(4vw, var(--gutter));
+}
+.gallery-label {
+  display: flex;
+  grid-column: 1;
+  grid-row: var(--position);
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.6rem;
+  padding: 0.65rem;
+  border: 1px solid var(--fine-line);
+  border-radius: 0.8rem;
+  color: var(--body);
+  cursor: pointer;
+  background: #172029;
+}
+.gallery-label img { flex: 0 0 auto; width: 4.1rem; height: auto; border-radius: 0.28rem; }
+.gallery-label strong, .gallery-label small { display: block; }
+.gallery-label strong { line-height: 1.3; }
+.gallery-label small { font-size: 0.875rem; line-height: 1.35; margin-top: 0.15rem; color: var(--muted); }
+.gallery-label:hover { background: #202a33; }
+.gallery-choice:checked + .gallery-label { border-color: #c58b61; background: #292725; }
+.gallery-choice:checked + .gallery-label strong { color: #ffbf91; }
+.gallery-choice:focus-visible + .gallery-label { outline: 2px solid var(--accent); outline-offset: 3px; }
+.gallery-panel { display: none; grid-row: 1 / 5; grid-column: 2; min-width: 0; }
+.gallery-choice:checked + .gallery-label + .gallery-panel { display: block; }
+.gallery-image { overflow: hidden; border: 1px solid #34434c; border-radius: 0.9rem; }
+.gallery-panel figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1.05rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.gallery-panel figcaption p { flex: 1 1 28rem; font-size: 1rem; line-height: 1.55; }
+.gallery-panel figcaption a { white-space: nowrap; }
+
+.getting-started, .menu-status { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: min(4vw, var(--gutter)); }
+.getting-started > div > p { max-width: 36ch; margin: 0.85rem 0; }
+.steps { margin: 0; padding-inline-start: 1.65rem; }
+.steps li { padding-inline-start: 0.4rem; }
+.steps li + li { margin-top: 0.85rem; }
+.steps li::marker { color: var(--hero-accent); font-weight: 650; }
+.menu-status { align-items: start; }
+.menu-status h2 { font-size: 1.25rem; letter-spacing: -0.02em; }
+.status-line { display: flex; align-items: center; gap: 0.65rem; }
+.status-line + .status-line { margin-top: 0.65rem; }
+.status-line img { flex: none; }
+.home-footer { padding-top: 1.1rem; border-top: 1px solid var(--fine-line); }
+.home-footer p { color: var(--muted); font-size: 0.9375rem; }
+
+@media (max-width: 59rem) {
+  .hero-actions { align-items: flex-start; }
+  .gallery-label { gap: 0.55rem; }
+  .gallery-label img { width: 3rem; }
+}
+@media (max-width: 49rem) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: var(--gutter); }
+  .hero-copy h1 { max-width: 15ch; font-size: clamp(2.55rem, 8vw, 4rem); }
+  .hero-copy > p { max-width: 48ch; }
+  .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 0.65rem; }
+  .gallery-label { grid-row: 1; grid-column: var(--position); min-height: 2.9rem; justify-content: center; text-align: center; padding: 0.45rem 0.25rem; }
+  .gallery-label img, .gallery-label small { display: none; }
+  .gallery-panel { grid-row: 2; grid-column: 1 / -1; }
+  .getting-started, .menu-status { grid-template-columns: minmax(0, 1fr); gap: var(--gutter); }
+}
+@media (max-width: 26rem) {
+  .home { --section-space: 1.75rem; }
+  .home-header { gap: 0.3rem 0.65rem; }
+  .home-header .page-links { gap: 0.25rem 0.6rem; }
+  .home-header .brand { gap: 0.25rem; font-size: 1.05rem; }
+  .home-header .brand img { width: 1.9rem; height: 1.9rem; }
+  .home-header .page-links a { font-size: 0.875rem; }
+  .gallery-label strong { font-size: 0.9375rem; }
+  .hero-actions { gap: 0.8rem; }
+}

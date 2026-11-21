@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Brand from '../components/Brand.astro';
+import PageLinks from '../components/PageLinks.astro';
+import { authorUrl, footerLinks, helpLinks, siteName } from '../site.mjs';
+
+interface Props {
+  title: string;
+  description: string;
+  updated?: string;
+  noindex?: boolean;
+}
+const { title, description, updated, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`${title} - ${siteName}`} description={description} noindex={noindex} />
+  </head>
+  <body class="document-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <div class="site-frame">
+      <header class="masthead">
+        <Brand />
+        <PageLinks label="Help" links={helpLinks} />
+      </header>
+      <main class="document-card" id="content">
+        <header class="document-title">
+          <h1>{title}</h1>
+          <p>{description}</p>
+          {updated && <p class="updated">Last updated <time datetime={updated}>{new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(updated))}</time></p>}
+        </header>
+        <slot />
+      </main>
+      <footer class="document-footer">
+        <a href={authorUrl}>Ighor July</a>
+        <PageLinks label="Footer navigation" links={footerLinks} />
+      </footer>
+    </div>
+  </body>
+</html>

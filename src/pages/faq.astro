@@ -1,0 +1,79 @@
+---
+import Document from '../layouts/Document.astro';
+---
+
+<Document title="Frequently Asked Questions" description="Set up your first Hot Corner, choose which corners work on each display, and get your saved settings back.">
+  <section id="setup">
+    <h2>Getting started</h2>
+    <details open>
+      <summary>How do I set up my first corner?</summary>
+      <ol>
+        <li>Open ColdCorners. In <strong>Permissions</strong>, choose <strong>Enable Permission</strong> and grant the access requested by macOS.</li>
+        <li>In the <strong>ColdCorners</strong> tab, choose <strong>Open Hot Corners Settings...</strong> and assign an action such as Mission Control to a corner in macOS.</li>
+        <li>Return to ColdCorners, turn on <strong>Enable ColdCorners</strong>, choose <strong>Block selected corners</strong>, and check that corner on the display where you want it blocked.</li>
+      </ol>
+      <p>Uncheck the corner to let it activate again. Turning off ColdCorners or quitting the app restores normal Hot Corner behavior and preserves your assignments in macOS.</p>
+    </details>
+    <details>
+      <summary>How do I read the display map?</summary>
+      <p>In <strong>Block selected corners</strong> mode, each checkmark blocks that corner. In <strong>Allow selected corners</strong> mode, only checked corners can activate. Click the center of a display to select or clear all its exposed corners at once.</p>
+      <p>The map follows your arrangement in macOS. A corner that opens directly onto an adjacent display can disappear from the map because the pointer can travel through it.</p>
+      <figure>
+        <img src="/corner-map.webp" width="1420" height="1072" loading="lazy" decoding="async" alt="ColdCorners in Block selected corners mode, with the lower left corner of a MacBook Pro and the upper right corner of a Studio Display checked." />
+        <figcaption>Two corners are blocked in this example. The other exposed corners keep their assigned macOS actions.</figcaption>
+      </figure>
+    </details>
+    <details>
+      <summary>Can each display run a different action?</summary>
+      <p>macOS assigns the action for each corner position. ColdCorners controls which displays can trigger it. For example, if macOS assigns Mission Control to the upper right corner, you can keep it active on your laptop and block it on your external display.</p>
+    </details>
+    <details>
+      <summary>What happens when I disconnect a display?</summary>
+      <p>ColdCorners remembers the mode and corner selections for each combination of displays. Disconnect your monitor to switch to your laptop setup. Reconnect it to restore your desk setup.</p>
+    </details>
+  </section>
+
+  <section id="timer">
+    <h2>Timers, shortcuts, and the menu bar</h2>
+    <details>
+      <summary>Can I block every corner during a presentation?</summary>
+      <p>Open the ColdCorners menu bar icon and choose <strong>Block All Hot Corners</strong>. Pick 5, 15, or 30 minutes, 1 or 2 hours, or <strong>Until Turned Off</strong>. During a timed block the menu shows the end time.</p>
+      <p>Your previous settings return when the timer expires. Choose <strong>Use Saved Settings</strong> to restore them sooner or to end an indefinite block.</p>
+    </details>
+    <details id="keyboard-shortcut">
+      <summary>How do I turn corner locking on or off with the keyboard?</summary>
+      <p>Open the <strong>Settings</strong> tab. Under <strong>Keyboard Shortcut</strong>, click <strong>Record Shortcut</strong>. Press a function key, or hold Command, Control, or Option and press another key. Escape cancels recording.</p>
+      <p>The shortcut works from any app while ColdCorners is running. Click the saved shortcut to replace it or <strong>Clear</strong> to remove it. In older builds without the recorder, use <strong>Enable ColdCorners</strong> in the app or its menu bar menu.</p>
+    </details>
+    <details>
+      <summary>Can ColdCorners start quietly at login?</summary>
+      <p>On macOS 13 and later, turn on <strong>Start ColdCorners at Login</strong> in Settings. On earlier versions, add ColdCorners to your login items manually. Leave the menu bar icon enabled for a login launch with Settings closed.</p>
+    </details>
+    <details>
+      <summary>How do I get back to Settings if I hid the icon?</summary>
+      <p>Open ColdCorners from Finder or Spotlight. This brings Settings forward even if the app is already running. Closing Settings leaves your corner rules active.</p>
+    </details>
+    <details>
+      <summary>What do the two menu bar icons mean?</summary>
+      <p>A lock inside the four corner marks means ColdCorners is ready to apply your rules. Four empty corner marks mean filtering is off or unavailable. Check whether ColdCorners is enabled and the system permission is granted. <a href="/#menu-status">See both menu bar icons</a>.</p>
+    </details>
+  </section>
+
+  <section id="permissions">
+    <h2>Permissions and troubleshooting</h2>
+    <details>
+      <summary>Why does ColdCorners need Device Control or Accessibility?</summary>
+      <p>A Hot Corner can trigger while any app is in front. ColdCorners uses this permission to filter pointer movement and dragging in the small area at each blocked corner, before macOS activates the assigned action.</p>
+      <p>The permission is called <strong>Device Control and Data Access</strong> on macOS 27 and later and <strong>Accessibility</strong> on earlier versions. You can revoke it in your Mac's privacy settings. <a href="/privacy-policy/">Read the Privacy Policy</a>.</p>
+    </details>
+    <details>
+      <summary>What if ColdCorners is missing from the permission list?</summary>
+      <p>In the Permissions tab, choose <strong>Show App in Finder</strong>. Add ColdCorners.app to the macOS permission list with the add button or by dragging it into the list. Turn on its switch and return to ColdCorners.</p>
+    </details>
+    <details>
+      <summary>Why does a corner behave differently than I expect?</summary>
+      <p>First turn off <strong>Enable ColdCorners</strong> and test the action assigned in macOS. Hold any modifier key you assigned to it. If it works, turn ColdCorners back on and check the permission, the current display map, the selected mode, and whether a timer is active.</p>
+      <p>If the behavior persists, <a href="/support/">contact support</a> with your display arrangement and the corner you tested.</p>
+    </details>
+  </section>
+</Document>

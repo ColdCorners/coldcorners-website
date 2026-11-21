@@ -1,0 +1,30 @@
+---
+import Document from '../layouts/Document.astro';
+import { issuesUrl, supportEmail } from '../site.mjs';
+---
+
+<Document title="Support" description="Get help with ColdCorners, report a corner that behaves unexpectedly, or suggest an improvement.">
+  <section>
+    <h2>Help with setup</h2>
+    <p>The <a href="/faq/#setup">setup guide</a> walks through assigning an action in macOS and blocking it on one display. For an access prompt or a corner that still activates, see <a href="/faq/#permissions">permissions and troubleshooting</a>.</p>
+  </section>
+  <section>
+    <h2>Report a bug or request a feature</h2>
+    <p><a href={issuesUrl}>Browse ColdCorners issues on GitHub</a> to see existing reports, or <a href={`${issuesUrl}/new`}>open a new issue</a>. For a corner that behaves unexpectedly, include these details so the developer can reproduce it.</p>
+    <ul>
+      <li>Your macOS version and the ColdCorners version shown in About.</li>
+      <li>Your display arrangement, the corner you tested, and the action assigned in macOS.</li>
+      <li>The selected blocking mode, whether a timer is active, and the permission status shown in ColdCorners.</li>
+      <li>What you did, what you expected, and what happened.</li>
+    </ul>
+    <p>A screenshot of the display map can help. GitHub issues are public, so remove personal details before posting.</p>
+  </section>
+  <section>
+    <h2>Contact the developer privately</h2>
+    <p>Email <a href={`mailto:${supportEmail}`}>{supportEmail}</a> to reach Ighor July for private support or a privacy request. Include only the details needed for your question. <a href="/privacy-policy/#support">How support information is handled</a>.</p>
+  </section>
+  <section>
+    <h2>App Store purchases</h2>
+    <p>Apple handles payments and refund requests for Mac App Store purchases. <a href="https://reportaproblem.apple.com/">Contact Apple about a purchase</a>.</p>
+  </section>
+</Document>
