@@ -2,7 +2,7 @@ export const siteUrl = "https://coldcorners.app";
 export const siteName = "ColdCorners";
 export const authorUrl = "https://reverseeverything.com/ighor?utm_source=coldcorners";
 export const supportEmail = "support@cornerlock.app";
-export const issuesUrl = "https://github.com/JulyIghor/CornerLock/issues";
+export const issuesUrl = "https://github.com/JulyIghor/ColdCorners/issues";
 
 export const helpLinks = [
   { href: "/faq/", label: "FAQ" },
