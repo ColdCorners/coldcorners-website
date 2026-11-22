@@ -8,6 +8,8 @@ import { appIconUrl, authorUrl, footerLinks, helpLinks, siteName } from '../site
 import { screenshots } from '../screenshots';
 
 const navigation = [{ href: '#screenshots', label: 'Screenshots' }, ...helpLinks];
+const heroSmall = '/screenshots/hero-map-800.webp?v=2';
+const heroLarge = '/screenshots/hero-map-1440.webp?v=2';
 const description = 'Keep macOS Hot Corners active on your MacBook and quiet on the presentation display. Pause them all on a timer or toggle corner locking with a keyboard shortcut.';
 const app = {
   '@context': 'https://schema.org',
@@ -54,8 +56,8 @@ const app = {
             </div>
             <p class="availability">Coming soon to the Mac App Store.</p>
           </div>
-          <a class="hero-image" href="/screenshots/display-map.webp" aria-label="Open the full-size ColdCorners display map screenshot">
-            <img src="/screenshots/hero-map-800.webp" srcset="/screenshots/hero-map-800.webp 800w, /screenshots/hero-map-1440.webp 1440w" sizes="(max-width: 49rem) 94vw, (max-width: 80rem) 55vw, 44rem" width="2120" height="1680" fetchpriority="high" alt="ColdCorners Settings with the top left Hot Corner allowed on the MacBook Pro and no corners allowed on the Studio Display." />
+          <a class="hero-image" href={heroLarge} aria-label="Open the full-size ColdCorners display map screenshot">
+            <img src={heroSmall} srcset={`${heroSmall} 800w, ${heroLarge} 1440w`} sizes="(max-width: 49rem) 94vw, (max-width: 80rem) 55vw, 44rem" width="1440" height="1114" fetchpriority="high" alt="ColdCorners Settings with the top left Hot Corner allowed on the MacBook Pro and no corners allowed on the Studio Display." />
           </a>
         </section>
         <ScreenshotGallery />
