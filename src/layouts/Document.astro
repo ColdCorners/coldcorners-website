@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Brand from '../components/Brand.astro';
 import PageLinks from '../components/PageLinks.astro';
-import { authorUrl, footerLinks, helpLinks, siteName } from '../site.mjs';
+import { authorLink, footerLinks, helpLinks, siteName } from '../site.mjs';
 
 interface Props {
   title: string;
@@ -34,7 +34,7 @@ const { title, description, updated, noindex } = Astro.props;
         <slot />
       </main>
       <footer class="document-footer">
-        <a href={authorUrl}>Ighor July</a>
+        <a href={authorLink.href} rel="author">{authorLink.label}</a>
         <PageLinks label="Footer navigation" links={footerLinks} />
       </footer>
     </div>

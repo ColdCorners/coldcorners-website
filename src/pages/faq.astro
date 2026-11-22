@@ -10,10 +10,14 @@ import { supportEmail } from '../site.mjs';
       <summary>How do I set up my first corner?</summary>
       <ol>
         <li>Open ColdCorners. In <strong>Permissions</strong>, choose <strong>Enable Permission</strong> and grant the access requested by macOS.</li>
-        <li>In the <strong>ColdCorners</strong> tab, choose <strong>Open Hot Corners Settings...</strong> and assign an action such as Mission Control to a corner in macOS.</li>
+        <li>In the <strong>ColdCorners</strong> tab, choose <strong>Open Hot Corners Settings...</strong> and pick the action you want that corner to trigger in macOS.</li>
         <li>Return to ColdCorners, turn on <strong>Enable ColdCorners</strong>, choose <strong>Block selected corners</strong>, and check that corner on the display where you want it blocked.</li>
       </ol>
       <p>Uncheck the corner to let it activate again. Turning off ColdCorners or quitting the app restores normal Hot Corner behavior and preserves your assignments in macOS.</p>
+    </details>
+    <details id="hot-corner-actions">
+      <summary>Which Hot Corner actions can I use?</summary>
+      <p>ColdCorners works with any action you assign in macOS Hot Corners settings. For example, a corner can show the desktop, start the screen saver, lock the screen, or open Mission Control.</p>
     </details>
     <details id="third-party-hot-corners">
       <summary>Does ColdCorners work with third-party Hot Corners apps?</summary>
@@ -30,8 +34,8 @@ import { supportEmail } from '../site.mjs';
       </figure>
     </details>
     <details>
-      <summary>Can each display run a different action?</summary>
-      <p>macOS assigns the action for each corner position. ColdCorners controls which displays can trigger it. For example, if macOS assigns Mission Control to the upper right corner, you can keep it active on your laptop and block it on your external display.</p>
+      <summary>Can I assign a different Hot Corner action to each display?</summary>
+      <p>macOS uses the same action for a given corner across displays. For example, if your top left Hot Corner shows the desktop, ColdCorners lets you allow that corner on your MacBook and block it on your external display. Your usual keyboard shortcuts and trackpad gestures still work.</p>
     </details>
     <details>
       <summary>What happens when I disconnect a display?</summary>

@@ -4,13 +4,13 @@ import BaseHead from '../components/BaseHead.astro';
 import Brand from '../components/Brand.astro';
 import PageLinks from '../components/PageLinks.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
-import { appIconUrl, authorUrl, footerLinks, helpLinks, siteName } from '../site.mjs';
+import { appIconUrl, authorLink, footerLinks, helpLinks, siteName } from '../site.mjs';
 import { screenshots } from '../screenshots';
 
 const navigation = [{ href: '#screenshots', label: 'Screenshots' }, ...helpLinks];
 const heroSmall = '/screenshots/hero-map-800.webp?v=2';
 const heroLarge = '/screenshots/hero-map-1440.webp?v=2';
-const description = 'Keep macOS Hot Corners active on your MacBook and quiet on the presentation display. Pause them all on a timer or toggle corner locking with a keyboard shortcut.';
+const description = 'Choose which macOS Hot Corners respond on each display. Pause all corners on a timer or toggle corner locking with a keyboard shortcut.';
 const app = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
@@ -49,7 +49,7 @@ const app = {
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
             <h1 id="hero-title">Cool down your Mac's <span>Hot Corners.</span></h1>
-            <p>Keep Mission Control handy on your laptop without triggering it on your external display. Choose which corners stay active on each screen, or pause them all on a timer.</p>
+            <p>Choose which Hot Corners respond on each display, whether they show the desktop, start the screen saver, or open Mission Control. Pause them all on a timer when you present.</p>
             <div class="hero-actions">
               <a class="primary-link" href="#screenshots">Explore screenshots</a>
               <a class="text-link" href="/faq/#setup">Read the setup guide</a>
@@ -70,7 +70,7 @@ const app = {
           </div>
           <ol class="steps">
             <li><strong>Grant permission.</strong> Open the Permissions tab and allow ColdCorners to filter pointer movement at blocked corners.</li>
-            <li><strong>Choose an action in macOS.</strong> Use "Open Hot Corners Settings..." to assign an action such as Mission Control.</li>
+            <li><strong>Choose an action in macOS.</strong> Use "Open Hot Corners Settings..." to assign the action you want to a corner.</li>
             <li><strong>Pick a corner on the map.</strong> Enable ColdCorners, choose "Block selected corners", and check the corner on the display where the action gets in your way.</li>
           </ol>
         </section>
@@ -83,7 +83,7 @@ const app = {
         </section>
       </main>
       <footer class="home-footer">
-        <p>ColdCorners by <a href={authorUrl}>Ighor July</a></p>
+        <p><a href={authorLink.href} rel="author">{authorLink.label}</a></p>
         <PageLinks label="Footer navigation" links={[...helpLinks, ...footerLinks]} />
       </footer>
     </div>

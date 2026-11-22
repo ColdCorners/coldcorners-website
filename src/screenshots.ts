@@ -3,7 +3,7 @@ export const screenshots = [
     id: 'display-map',
     label: 'Display map',
     hint: 'Choose corners by display',
-    description: 'Keep Mission Control on your MacBook and leave the presentation display quiet. In "Allow selected corners" mode, only the corners you check can activate.',
+    description: 'In "Allow selected corners" mode, only checked Hot Corners can trigger their assigned actions. Here, the top left Hot Corner is active on the MacBook Pro and all Hot Corners are blocked on the Studio Display.',
     alt: 'The display map shows the top left corner checked on the MacBook Pro and no corners checked on the Studio Display.',
   },
   {
