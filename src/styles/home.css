@@ -88,14 +88,14 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(14rem, 0.47fr) minmax(0, 1.3fr);
-  grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-rows: repeat(var(--scene-count), min-content) 1fr;
   align-items: start;
   gap: 0.65rem min(4vw, var(--gutter));
 }
 .gallery-label {
   display: flex;
   grid-column: 1;
-  grid-row: var(--position);
+  align-self: stretch;
   align-items: center;
   gap: 0.8rem;
   min-height: 4.6rem;
@@ -114,7 +114,7 @@
 .gallery-choice:checked + .gallery-label { border-color: #c58b61; background: #292725; }
 .gallery-choice:checked + .gallery-label strong { color: #ffbf91; }
 .gallery-choice:focus-visible + .gallery-label { outline: 2px solid var(--accent); outline-offset: 3px; }
-.gallery-panel { display: none; grid-row: 1 / 5; grid-column: 2; min-width: 0; }
+.gallery-panel { display: none; grid-row: 1 / -1; grid-column: 2; min-width: 0; }
 .gallery-choice:checked + .gallery-label + .gallery-panel { display: block; }
 .gallery-image { overflow: hidden; border: 1px solid #34434c; border-radius: 0.9rem; }
 .gallery-panel figcaption {
@@ -151,11 +151,14 @@
   .hero { grid-template-columns: minmax(0, 1fr); gap: var(--gutter); }
   .hero-copy h1 { max-width: 15ch; font-size: clamp(2.55rem, 8vw, 4rem); }
   .hero-copy > p { max-width: 48ch; }
-  .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto; gap: 0.65rem; }
-  .gallery-label { grid-row: 1; grid-column: var(--position); min-height: 2.9rem; justify-content: center; text-align: center; padding: 0.45rem 0.25rem; }
+  .gallery-grid { grid-template-columns: repeat(var(--scene-count), minmax(0, 1fr)); grid-template-rows: none; gap: 0.65rem; }
+  .gallery-label { grid-column: auto; min-height: 2.9rem; justify-content: center; text-align: center; padding: 0.45rem 0.25rem; }
   .gallery-label img, .gallery-label small { display: none; }
-  .gallery-panel { grid-row: 2; grid-column: 1 / -1; }
+  .gallery-panel { order: 1; grid-row: auto; grid-column: 1 / -1; }
   .getting-started, .menu-status { grid-template-columns: minmax(0, 1fr); gap: var(--gutter); }
+}
+@media (max-width: 36rem) {
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 26rem) {
   .home { --section-space: 1.75rem; }

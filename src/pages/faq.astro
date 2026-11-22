@@ -2,7 +2,7 @@
 import Document from '../layouts/Document.astro';
 ---
 
-<Document title="Frequently Asked Questions" description="Set up your first Hot Corner, choose which corners work on each display, and get your saved settings back.">
+<Document title="Frequently Asked Questions" description="Learn how to choose which macOS Hot Corners work on each display, pause them for a presentation, and record a keyboard shortcut in ColdCorners.">
   <section id="setup">
     <h2>Getting started</h2>
     <details open>
@@ -43,7 +43,11 @@ import Document from '../layouts/Document.astro';
     <details id="keyboard-shortcut">
       <summary>How do I turn corner locking on or off with the keyboard?</summary>
       <p>Open the <strong>Settings</strong> tab. Under <strong>Keyboard Shortcut</strong>, click <strong>Record Shortcut</strong>. Press a function key, or hold Command, Control, or Option and press another key. Escape cancels recording.</p>
-      <p>The shortcut works from any app while ColdCorners is running. Click the saved shortcut to replace it or <strong>Clear</strong> to remove it. In older builds without the recorder, use <strong>Enable ColdCorners</strong> in the app or its menu bar menu.</p>
+      <p>The shortcut works from any app while ColdCorners is running. Click the saved shortcut to replace it or <strong>Clear</strong> to remove it.</p>
+      <figure>
+        <img src="/screenshots/shortcut-settings.webp" width="1420" height="1072" loading="lazy" decoding="async" alt="The Settings tab shows the recorded key combination and a Clear button under Keyboard Shortcut." />
+        <figcaption>In this example, Control-Option-Shift-K toggles corner locking.</figcaption>
+      </figure>
     </details>
     <details>
       <summary>Can ColdCorners start quietly at login?</summary>
@@ -55,7 +59,7 @@ import Document from '../layouts/Document.astro';
     </details>
     <details>
       <summary>What do the two menu bar icons mean?</summary>
-      <p>A lock inside the four corner marks means ColdCorners is ready to apply your rules. Four empty corner marks mean filtering is off or unavailable. Check whether ColdCorners is enabled and the system permission is granted. <a href="/#menu-status">See both menu bar icons</a>.</p>
+      <p>A snowflake inside the four corner marks means ColdCorners is ready to apply your rules. Four empty corner marks mean filtering is off or unavailable. Check whether ColdCorners is enabled and the system permission is granted. <a href="/#menu-status">See both menu bar icons</a>.</p>
     </details>
   </section>
 

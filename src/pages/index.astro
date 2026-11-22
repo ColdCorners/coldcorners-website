@@ -4,15 +4,37 @@ import BaseHead from '../components/BaseHead.astro';
 import Brand from '../components/Brand.astro';
 import PageLinks from '../components/PageLinks.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
-import { authorUrl, footerLinks, helpLinks } from '../site.mjs';
+import { appIconUrl, authorUrl, footerLinks, helpLinks, siteName } from '../site.mjs';
+import { screenshots } from '../screenshots';
 
 const navigation = [{ href: '#screenshots', label: 'Screenshots' }, ...helpLinks];
+const description = 'Keep macOS Hot Corners active on your MacBook and quiet on the presentation display. Pause them all on a timer or toggle corner locking with a keyboard shortcut.';
+const app = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: siteName,
+  operatingSystem: 'macOS',
+  applicationCategory: 'UtilitiesApplication',
+  url: new URL('/', Astro.site).href,
+  image: new URL(appIconUrl, Astro.site).href,
+  description,
+  screenshot: screenshots.map(({ id }) => new URL(`/screenshots/${id}.webp`, Astro.site).href),
+};
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="ColdCorners for Mac - Cool down your Hot Corners" description="Choose which Hot Corners stay active on each display, or pause them all on a timer. ColdCorners remembers your setup when you reconnect a monitor." shareImage="/screenshots/coldcorners-social.jpg" shareAlt="ColdCorners showing Hot Corner controls for a MacBook Pro and a Studio Display." />
+    <BaseHead
+      title="ColdCorners for Mac - Cool down Hot Corners by display"
+      description={description}
+      shareImage={{
+        path: '/screenshots/coldcorners-social.jpg?v=snowflake',
+        alt: 'ColdCorners shows the top left Hot Corner enabled on a MacBook Pro beside a Studio Display with no corners enabled.',
+        width: 1200, height: 630, type: 'image/jpeg',
+      }}
+    />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(app).replace(/</g, '\\u003c')} />
   </head>
   <body class="home">
     <a class="skip-link" href="#content">Skip to content</a>
@@ -33,7 +55,7 @@ const navigation = [{ href: '#screenshots', label: 'Screenshots' }, ...helpLinks
             <p class="availability">Coming soon to the Mac App Store.</p>
           </div>
           <a class="hero-image" href="/screenshots/display-map.webp" aria-label="Open the full-size ColdCorners display map screenshot">
-            <img src="/screenshots/hero-map-800.webp" srcset="/screenshots/hero-map-800.webp 800w, /screenshots/hero-map-1440.webp 1440w" sizes="(max-width: 49rem) 94vw, (max-width: 80rem) 55vw, 44rem" width="2212" height="1752" fetchpriority="high" alt="ColdCorners Settings with the top left Hot Corner allowed on the MacBook Pro and no corners allowed on the Studio Display." />
+            <img src="/screenshots/hero-map-800.webp" srcset="/screenshots/hero-map-800.webp 800w, /screenshots/hero-map-1440.webp 1440w" sizes="(max-width: 49rem) 94vw, (max-width: 80rem) 55vw, 44rem" width="2120" height="1680" fetchpriority="high" alt="ColdCorners Settings with the top left Hot Corner allowed on the MacBook Pro and no corners allowed on the Studio Display." />
           </a>
         </section>
         <ScreenshotGallery />
@@ -53,7 +75,7 @@ const navigation = [{ href: '#screenshots', label: 'Screenshots' }, ...helpLinks
         <section class="menu-status" id="menu-status" aria-labelledby="menu-status-title">
           <h2 id="menu-status-title">Reading the menu bar icon</h2>
           <div>
-            <p class="status-line"><img src="/icons/coldcorners-enabled.svg" width="24" height="24" alt="Four corner marks around a lock" />ColdCorners is ready to apply your rules.</p>
+            <p class="status-line"><img src="/icons/coldcorners-enabled.svg" width="24" height="24" alt="Four corner marks around a snowflake" />ColdCorners is ready to apply your rules.</p>
             <p class="status-line"><img src="/icons/coldcorners-disabled.svg" width="24" height="24" alt="Four empty corner marks" />Filtering is off or needs attention. Check Settings.</p>
           </div>
         </section>

@@ -1,46 +1,24 @@
 ---
-const scenes = [
-  {
-    id: 'display-map',
-    label: 'Display map',
-    hint: 'Choose corners by display',
-    description: 'Choose "Block selected corners" to block the checked corners, or "Allow selected corners" to keep only those corners active. The map follows the arrangement of your displays.',
-    alt: 'ColdCorners Settings with only the top left corner of the MacBook Pro checked in Allow selected corners mode.',
-  },
-  {
-    id: 'block-timer',
-    label: 'Block timer',
-    hint: 'Pause all corners for a while',
-    description: 'Block every exposed corner for 5, 15, or 30 minutes, for 1 or 2 hours, or until you turn blocking off. Choose "Use Saved Settings" to bring your usual corners back sooner.',
-    alt: 'The ColdCorners menu bar menu shows a 15 minute block in effect, its end time, and the other available durations.',
-  },
-  {
-    id: 'saved-setups',
-    label: 'Saved setups',
-    hint: 'Switch between laptop and desk',
-    description: 'Unplug your monitor to switch to your laptop configuration. Reconnect it and ColdCorners restores the mode and corner selections you saved for your desk.',
-    alt: 'ColdCorners in Light appearance with the top right and bottom right Hot Corners blocked on the MacBook Pro.',
-  },
-];
+import { screenshots } from '../screenshots';
 ---
 
 <section class="product-section" id="screenshots" aria-labelledby="screenshots-title">
   <h2 id="screenshots-title">Inside ColdCorners</h2>
   <fieldset class="gallery">
     <legend class="sr-only">Choose a screenshot</legend>
-    <div class="gallery-grid">
-      {scenes.map((scene, index) => {
+    <div class="gallery-grid" style={`--scene-count: ${screenshots.length}`}>
+      {screenshots.map((scene, index) => {
         const image = `/screenshots/${scene.id}`;
         return (
           <Fragment>
             <input class="gallery-choice sr-only" type="radio" name="screenshot" id={`show-${scene.id}`} aria-controls={`preview-${scene.id}`} checked={index === 0} />
-            <label for={`show-${scene.id}`} class="gallery-label" style={`--position: ${index + 1}`}>
+            <label for={`show-${scene.id}`} class="gallery-label">
               <img src={`${image}-240.webp`} width="240" height="150" alt="" loading="lazy" />
               <span><strong>{scene.label}</strong><small>{scene.hint}</small></span>
             </label>
             <figure class="gallery-panel" id={`preview-${scene.id}`}>
               <a class="gallery-image" href={`${image}.webp`} aria-label={`Open the full-size ${scene.label.toLowerCase()} screenshot`}>
-                <img src={`${image}-960.webp`} srcset={`${image}-960.webp 960w, ${image}.webp 2880w`} sizes="(max-width: 48rem) 92vw, (max-width: 80rem) 62vw, 52rem" width="2880" height="1800" loading="lazy" decoding="async" alt={scene.alt} />
+                <img src={`${image}-960.webp`} srcset={`${image}-960.webp 960w, ${image}.webp 2880w`} sizes="(max-width: 49rem) 92vw, (max-width: 80rem) 62vw, 52rem" width="2880" height="1800" loading="lazy" decoding="async" alt={scene.alt} />
               </a>
               <figcaption>
                 <p>{scene.description}</p>
