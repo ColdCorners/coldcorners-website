@@ -1,5 +1,6 @@
 ---
 import Document from '../layouts/Document.astro';
+import { supportEmail } from '../site.mjs';
 ---
 
 <Document title="Frequently Asked Questions" description="Learn how to choose which macOS Hot Corners work on each display, pause them for a presentation, and record a keyboard shortcut in ColdCorners.">
@@ -13,6 +14,11 @@ import Document from '../layouts/Document.astro';
         <li>Return to ColdCorners, turn on <strong>Enable ColdCorners</strong>, choose <strong>Block selected corners</strong>, and check that corner on the display where you want it blocked.</li>
       </ol>
       <p>Uncheck the corner to let it activate again. Turning off ColdCorners or quitting the app restores normal Hot Corner behavior and preserves your assignments in macOS.</p>
+    </details>
+    <details id="third-party-hot-corners">
+      <summary>Does ColdCorners work with third-party Hot Corners apps?</summary>
+      <p>I've tested ColdCorners extensively with the Hot Corners built into macOS. I expect it to work with third-party Hot Corners apps too, though I haven't tested them yet.</p>
+      <p>If ColdCorners doesn't work with an app you use, email <a href={`mailto:${supportEmail}`}>{supportEmail}</a>. Tell me the app's name and version and what happens when you move the pointer into the corner. I'll use those details to reproduce the issue and work on a fix.</p>
     </details>
     <details>
       <summary>How do I read the display map?</summary>
