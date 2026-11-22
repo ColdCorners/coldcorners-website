@@ -143,7 +143,6 @@
 .home-footer p { color: var(--muted); font-size: 0.9375rem; }
 
 @media (max-width: 59rem) {
-  .hero-actions { align-items: flex-start; }
   .gallery-label { gap: 0.55rem; }
   .gallery-label img { width: 3rem; }
 }
